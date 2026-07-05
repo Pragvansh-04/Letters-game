@@ -2,23 +2,23 @@ import streamlit as st
 
 name = "rahul"
 
-st.title("Find Letters Game")
+st.title("Find Letters in Word")
 
-st.write("Guess how many letters are in the word.")
+print_word = st.button("Show Word")
 
-num = st.number_input(
-    "Enter Number",
-    min_value=1,
-    step=1
-)
+if print_word:
+    st.write("rahul")
+    st.write("Find letters in word")
 
-if st.button("Check"):
+num = st.number_input("Enter Number :", min_value=0, step=1)
+
+if st.button("Submit"):
 
     if num == len(name):
-        st.success("🎉 Congratulations!")
+        st.success("Congratulations")
 
     elif num < len(name):
         st.warning("Think Bigger Number")
 
-    else:
+    elif num > len(name):
         st.warning("Think Smaller Number")
